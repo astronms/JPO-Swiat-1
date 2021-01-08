@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Organizmy">
+      <UniqueIdentifier>{9be2581a-40b4-4f4d-a2fe-ad24ce5129c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Organizmy\Rosliny">
+      <UniqueIdentifier>{cee9386e-66ba-4c13-8054-9a4402fc55cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Organizmy\Zwierzeta">
+      <UniqueIdentifier>{493d22b2-5ed8-4109-bafe-890caa31cca7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="JPO-Świat-c++.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ekran.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Organizm.cpp">
+      <Filter>Source Files\Organizmy</Filter>
+    </ClCompile>
+    <ClCompile Include="Roslina.cpp">
+      <Filter>Source Files\Organizmy</Filter>
+    </ClCompile>
+    <ClCompile Include="Pozycja.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Koka.cpp">
+      <Filter>Source Files\Organizmy\Rosliny</Filter>
+    </ClCompile>
+    <ClCompile Include="Zwierze.cpp">
+      <Filter>Source Files\Organizmy</Filter>
+    </ClCompile>
+    <ClCompile Include="Swiat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mlecz.cpp">
+      <Filter>Source Files\Organizmy\Rosliny</Filter>
+    </ClCompile>
+    <ClCompile Include="Trawa.cpp">
+      <Filter>Source Files\Organizmy\Rosliny</Filter>
+    </ClCompile>
+    <ClCompile Include="Leniwiec.cpp">
+      <Filter>Source Files\Organizmy\Zwierzeta</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ekran.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Roslina.h">
+      <Filter>Source Files\Organizmy</Filter>
+    </ClInclude>
+    <ClInclude Include="Organizm.h">
+      <Filter>Source Files\Organizmy</Filter>
+    </ClInclude>
+    <ClInclude Include="Swiat.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pozycja.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Koka.h">
+      <Filter>Source Files\Organizmy\Rosliny</Filter>
+    </ClInclude>
+    <ClInclude Include="Zwierze.h">
+      <Filter>Source Files\Organizmy</Filter>
+    </ClInclude>
+    <ClInclude Include="Mlecz.h">
+      <Filter>Source Files\Organizmy\Rosliny</Filter>
+    </ClInclude>
+    <ClInclude Include="Trawa.h">
+      <Filter>Source Files\Organizmy\Rosliny</Filter>
+    </ClInclude>
+    <ClInclude Include="Leniwiec.h">
+      <Filter>Source Files\Organizmy\Zwierzeta</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
