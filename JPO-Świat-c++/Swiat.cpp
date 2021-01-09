@@ -3,7 +3,7 @@
 #include "iostream"
 
 Swiat::Swiat() {
-    tura = 1;
+    tura = 0;
 };
 
 void Swiat::wykonajTure() {
@@ -98,8 +98,7 @@ Organizm* Swiat::znajdz(Pozycja pozycja) {
 Zwierze* Swiat::rozmnorz(Zwierze& pasywny, Zwierze& inicjator) {
     if (rozmnorz(reinterpret_cast<Organizm&>(pasywny), 1)) {
         auto komunikat = std::vector<std::string>();
-        komunikat.push_back(pasywny.znak);
-        komunikat.emplace_back("\U0001f495");
+        komunikat.push_back(pasywny.znak + "- rozmno¿ono");
         Ekran::instancja()->wstawKomunikat(komunikat);
     }
     return nullptr;
@@ -108,8 +107,7 @@ Zwierze* Swiat::rozmnorz(Zwierze& pasywny, Zwierze& inicjator) {
 Roslina* Swiat::rozmnorz(Roslina& roslina) {
     if (rozmnorz(reinterpret_cast<Organizm&>(roslina), 2)) {
         auto komunikat = std::vector<std::string>();
-        komunikat.push_back(roslina.znak);
-        komunikat.emplace_back("\U0001F4A6");
+        komunikat.push_back(roslina.znak+"- rozmno¿ono");
         Ekran::instancja()->wstawKomunikat(komunikat);
     }
     return nullptr;

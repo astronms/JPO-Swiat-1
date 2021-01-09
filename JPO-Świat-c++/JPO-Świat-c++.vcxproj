@@ -139,11 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ciern.cpp" />
     <ClCompile Include="Ekran.cpp" />
+    <ClCompile Include="Guarana.cpp" />
     <ClCompile Include="JPO-Świat-c++.cpp" />
-    <ClCompile Include="Koka.cpp" />
     <ClCompile Include="Leniwiec.cpp" />
-    <ClCompile Include="Mlecz.cpp" />
+    <ClCompile Include="Lis.cpp" />
     <ClCompile Include="Organizm.cpp" />
     <ClCompile Include="owca.cpp" />
     <ClCompile Include="Pozycja.cpp" />
@@ -151,14 +152,15 @@
     <ClCompile Include="Swiat.cpp" />
     <ClCompile Include="Trawa.cpp" />
     <ClCompile Include="Wilk.cpp" />
-    <ClCompile Include="ZnakKolor.cpp" />
+    <ClCompile Include="Zaba.cpp" />
     <ClCompile Include="Zwierze.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ciern.h" />
     <ClInclude Include="Ekran.h" />
-    <ClInclude Include="Koka.h" />
+    <ClInclude Include="Guarana.h" />
     <ClInclude Include="Leniwiec.h" />
-    <ClInclude Include="Mlecz.h" />
+    <ClInclude Include="Lis.h" />
     <ClInclude Include="Organizm.h" />
     <ClInclude Include="owca.h" />
     <ClInclude Include="Pozycja.h" />
@@ -166,7 +168,7 @@
     <ClInclude Include="Swiat.h" />
     <ClInclude Include="Trawa.h" />
     <ClInclude Include="Wilk.h" />
-    <ClInclude Include="ZnakKolor.h" />
+    <ClInclude Include="Zaba.h" />
     <ClInclude Include="Zwierze.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

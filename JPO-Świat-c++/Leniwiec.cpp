@@ -5,7 +5,7 @@ Leniwiec::Leniwiec() {
     spi = false;
     sila = 2;
     inicjatywa = 1;
-    znak = "V";
+    znak = "\033[1;96mL\033[0m";
 }
 
 Organizm* Leniwiec::dziecko() {

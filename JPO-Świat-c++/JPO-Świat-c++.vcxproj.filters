@@ -31,17 +31,11 @@
     <ClCompile Include="Pozycja.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Koka.cpp">
-      <Filter>Source Files\Organizmy\Rosliny</Filter>
-    </ClCompile>
     <ClCompile Include="Zwierze.cpp">
       <Filter>Source Files\Organizmy</Filter>
     </ClCompile>
     <ClCompile Include="Swiat.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Mlecz.cpp">
-      <Filter>Source Files\Organizmy\Rosliny</Filter>
     </ClCompile>
     <ClCompile Include="Trawa.cpp">
       <Filter>Source Files\Organizmy\Rosliny</Filter>
@@ -55,8 +49,17 @@
     <ClCompile Include="owca.cpp">
       <Filter>Source Files\Organizmy\Zwierzeta</Filter>
     </ClCompile>
-    <ClCompile Include="ZnakKolor.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Guarana.cpp">
+      <Filter>Source Files\Organizmy\Rosliny</Filter>
+    </ClCompile>
+    <ClCompile Include="Ciern.cpp">
+      <Filter>Source Files\Organizmy\Rosliny</Filter>
+    </ClCompile>
+    <ClCompile Include="Lis.cpp">
+      <Filter>Source Files\Organizmy\Zwierzeta</Filter>
+    </ClCompile>
+    <ClCompile Include="Zaba.cpp">
+      <Filter>Source Files\Organizmy\Zwierzeta</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -75,14 +78,8 @@
     <ClInclude Include="Pozycja.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Koka.h">
-      <Filter>Source Files\Organizmy\Rosliny</Filter>
-    </ClInclude>
     <ClInclude Include="Zwierze.h">
       <Filter>Source Files\Organizmy</Filter>
-    </ClInclude>
-    <ClInclude Include="Mlecz.h">
-      <Filter>Source Files\Organizmy\Rosliny</Filter>
     </ClInclude>
     <ClInclude Include="Trawa.h">
       <Filter>Source Files\Organizmy\Rosliny</Filter>
@@ -96,8 +93,17 @@
     <ClInclude Include="owca.h">
       <Filter>Source Files\Organizmy\Zwierzeta</Filter>
     </ClInclude>
-    <ClInclude Include="ZnakKolor.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="Guarana.h">
+      <Filter>Source Files\Organizmy\Rosliny</Filter>
+    </ClInclude>
+    <ClInclude Include="Ciern.h">
+      <Filter>Source Files\Organizmy\Rosliny</Filter>
+    </ClInclude>
+    <ClInclude Include="Lis.h">
+      <Filter>Source Files\Organizmy\Zwierzeta</Filter>
+    </ClInclude>
+    <ClInclude Include="Zaba.h">
+      <Filter>Source Files\Organizmy\Zwierzeta</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

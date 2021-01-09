@@ -1,11 +1,13 @@
 ﻿#include "Ekran.h"
+#include <cstdio>
+
+#include <utility>
 #include "iostream"
 
 using std::string;
 
 Ekran::Ekran() {
-	tura = 0;
-    templatka = wygenerujTemplatka();
+    tura = 0;
     for (auto& rzad : plansza) {
         for (auto& kolumna : rzad) {
             kolumna = "  ";
@@ -21,143 +23,52 @@ void Ekran::wstawZnak(std::string znak, Pozycja pozycja) {
 }
 
 void Ekran::wyswietl() {
-    auto plansza = wstawKomunikaty(wstawTure(wstawZnakiGracza(templatka)));
     system("cls");
-    wyswietlBuffer(plansza);
+    std::cout << "autor: Maciej Stępień 148339\n";
+    std::cout << "tura: " << tura << "\n";
+    wyswietlDivider();
+    wstawZnakiGracza();
+    wyswietlDivider();
+    std::cout << std::endl << "Legenda: \n";
+    std::cout << " Rośliny: \033[1;32mT-trawa\033[0m \033[1;33mG-Guarana\033[0m \033[1;34m^-Cierń\033[0m\n";
+	std::cout << " Zwierzęta: \033[1;33mj-lis\033[0m \033[1;96mL-leniwiec\033[0m O-owca  \033[1;31mW-wilk\033[0m \033[1;32mZ-żaba\033[0m\n";
+
+    wstawKomunikaty();
 }
 
-std::vector<std::vector<ZnakKolor>> Ekran::wygenerujTemplatka() {
-    std::vector<std::string> asciiPlansza;
 
-    asciiPlansza.emplace_back("                                                                   \n");
-    asciiPlansza.emplace_back(" 1xxxxxxxxxxxxxxxxxx3      autor:      Maciej Stepien              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx      nr indeksu: 148339                      \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx  Tura:                                       \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx  Komunikaty:                                 \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
-    asciiPlansza.emplace_back("                                                                   \n");
-    asciiPlansza.emplace_back(" \U0001F344 \u2190 koka     \U0001F331 \u2190 mlecz \U0001F33E \u2190 trawa\n");
-    asciiPlansza.emplace_back(" \U0001F9A5 \u2190 leniwiec \U0001F411 \u2190 owca  \U0001F415 \u2190 wilk  \U0001F438 \u2190 żaba \U0001F40D \u2190 żmija \n");
 
-    std::vector<std::vector<ZnakKolor>> kolorowaPlansza;
-
-    for (std::string rzad : asciiPlansza) {
-        std::vector<ZnakKolor> kolorowaLinia;
-        for (char kolumna : rzad) {
-            kolorowaLinia.emplace_back(ZnakKolor(std::string(1, kolumna)));
-        }
-        kolorowaPlansza.emplace_back(kolorowaLinia);
-    }
-
-    const unsigned int RZAD_MAPY = 1;
-    const unsigned int KOLUMNA_MAPY = 1;
-    const std::string colors[] = { "236", "236", "236", "237", "237", "237" };
+void Ekran::wstawZnakiGracza() {
+    std::cout << "\n";
+    
     for (int rzad = 0; rzad < 20; rzad++) {
         for (int kolumna = 0; kolumna < 20; kolumna++) {
-            int v1 = rand() % 6;
-            auto color = colors[v1];
-            kolorowaPlansza[RZAD_MAPY + rzad][KOLUMNA_MAPY + kolumna].ustawKolor(color);
+            if(plansza[rzad][kolumna]=="  ")
+            {
+                std::cout << "\033[1;100mx\033[0m";
+            }else
+            {
+                std::cout << plansza[rzad][kolumna];
+               
+            }
+        	
         }
+        std::cout << std::endl;
     };
-
-
-    return kolorowaPlansza;
 }
 
-std::vector<std::vector<ZnakKolor>> Ekran::wstawZnakiGracza(std::vector<std::vector<ZnakKolor>> kolorowaPlansza) {
-    const unsigned int RZAD_MAPY = 1;
-    const unsigned int KOLUMNA_MAPY = 1;
-    for (int rzad = 0; rzad < 20; rzad++) {
-        for (int kolumna = 0; kolumna < 20; kolumna++) {
-            kolorowaPlansza[RZAD_MAPY + rzad][KOLUMNA_MAPY + kolumna].ustawZawartosc(plansza[rzad][kolumna]);
-        }
-    };
 
-    return kolorowaPlansza;
-}
-
-std::vector<std::vector<ZnakKolor>> Ekran::wstawTure(std::vector<std::vector<ZnakKolor>> kolorowaPlansza) {
-    const unsigned int RZAD_TURY = 4;
-    const unsigned int KOLUMNA_TURY = 29;
-
-    string znakiTury = std::to_string(tura);
-
-    for (int i = 0; i < znakiTury.size(); i++) {
-        kolorowaPlansza[RZAD_TURY][KOLUMNA_TURY + i].ustawZawartosc(string(1, znakiTury[i]));
-    };
-
-    return kolorowaPlansza;
-}
-
-std::vector<std::vector<ZnakKolor>> Ekran::wstawKomunikaty(std::vector<std::vector<ZnakKolor>> kolorowaPlansza) {
-
-    const unsigned int RZAD_MAPY = 8;
-    const unsigned int KOLUMNA_MAPY = 29;
-
-    auto ile_w_poziomie = 0;
-    auto ile_w_pionie = 0;
-
-    for (auto komunikat : komunikaty) {
-        if (ile_w_poziomie == 3) {
-            ile_w_poziomie = 0;
-            ile_w_pionie += 1;
-        }
-
-
-        if (ile_w_pionie > 11) {
-            kolorowaPlansza[RZAD_MAPY + ile_w_pionie][KOLUMNA_MAPY].ustawZawartosc("i jeszcze trochę...");
-            break;
-        }
-
+void Ekran::wstawKomunikaty() {
+    std::cout << "Komunikaty :\n";
+	for (auto komunikat : komunikaty) {
+        
         for (int i = 0; i < komunikat.size(); i++) {
             auto literka = komunikat[i];
-            kolorowaPlansza[RZAD_MAPY + ile_w_pionie][KOLUMNA_MAPY + ile_w_poziomie * 5 + i].ustawZawartosc(literka);
-            if (komunikat.size() == 3) {
-                kolorowaPlansza[RZAD_MAPY + ile_w_pionie][KOLUMNA_MAPY + ile_w_poziomie * 5 + i].ustawKolor("1");
-            }
-            else {
-                kolorowaPlansza[RZAD_MAPY + ile_w_pionie][KOLUMNA_MAPY + ile_w_poziomie * 5 + i].ustawKolor("195");
-            }
+            std::cout << literka << std::endl;   
         }
-        for (int i = komunikat.size(); i < 5; i++) {
-            kolorowaPlansza[RZAD_MAPY + ile_w_pionie][KOLUMNA_MAPY + ile_w_poziomie * 5 + i].ustawZawartosc("  ");
-        }
-        ile_w_poziomie += 1;
-
     }
-
     komunikaty.clear();
-    return kolorowaPlansza;
 }
-
-void Ekran::wyswietlBuffer(const std::vector<std::vector<ZnakKolor>>& linie) {
-    for (const auto& linia : linie) {
-        for (auto znak : linia) {
-            std::cout << znak.toString();
-        }
-    }
-    std::cout.flush();
-    for (auto& rzad : plansza) {
-        for (auto& kolumna : rzad) {
-            kolumna = "⠀ ";
-        }
-    };
-};
 
 Ekran* Ekran::instancja() {
     static Ekran instancja;
@@ -167,3 +78,9 @@ Ekran* Ekran::instancja() {
 void Ekran::wstawKomunikat(std::vector<std::string> komunikat) {
     komunikaty.emplace_back(komunikat);
 }
+
+void Ekran::wyswietlDivider()
+{
+    std::cout << "---------------------------------\n";
+}
+

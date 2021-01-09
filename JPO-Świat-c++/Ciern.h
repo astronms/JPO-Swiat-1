@@ -1,9 +1,9 @@
 #pragma once
 #include "Roslina.h"
 
-class Mlecz : public Roslina {
+class Ciern : public Roslina {
 public:
-    Mlecz();
+    Ciern();
     Organizm* dziecko();
     void akcja();
 };

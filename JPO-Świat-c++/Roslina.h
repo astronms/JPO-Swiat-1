@@ -6,6 +6,8 @@ public:
     Roslina();
 
     void akcja();
+    void akcja(bool);
+    //void Roslina::rozmnorz();
 
     void kolizja(Organizm& wchodzacy);
 };
