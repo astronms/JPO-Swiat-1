@@ -35,5 +35,3 @@ public:
     Pozycja pozycja;
 };
 
-
-#endif //JPO_SWIAT_ORGANIZM_H

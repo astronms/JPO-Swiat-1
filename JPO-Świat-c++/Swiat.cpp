@@ -74,7 +74,7 @@ void Swiat::idz(Organizm& ruszajacySie, Pozycja pozycja) {
     auto stojacy = znajdz(pozycja);
 
     if (stojacy == &ruszajacySie) {
-        return; // LOL XD
+        return; 
     }
 
     if (stojacy) {
@@ -102,6 +102,7 @@ Zwierze* Swiat::rozmnorz(Zwierze& pasywny, Zwierze& inicjator) {
         komunikat.emplace_back("\U0001f495");
         Ekran::instancja()->wstawKomunikat(komunikat);
     }
+    return nullptr;
 }
 
 Roslina* Swiat::rozmnorz(Roslina& roslina) {
@@ -111,6 +112,7 @@ Roslina* Swiat::rozmnorz(Roslina& roslina) {
         komunikat.emplace_back("\U0001F4A6");
         Ekran::instancja()->wstawKomunikat(komunikat);
     }
+    return nullptr;
 }
 
 Organizm* Swiat::rozmnorz(Organizm& organizm, unsigned int zasieg) {
@@ -150,7 +152,7 @@ bool Swiat::znajdzWolneMiejsceObok(unsigned int zasieg, Pozycja pozycja, Pozycja
             continue;
         }
         else {
-            return true; // OK!
+            return true; 
         }
     }
     return false;

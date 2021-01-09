@@ -5,7 +5,7 @@
 Organizm::Organizm() {
     zyje = false;
     sila = 0;
-    znak = "\U00002753";
+    znak = "[";
 }
 
 void Organizm::zarejestrujSwiat(Swiat* _swiat) {

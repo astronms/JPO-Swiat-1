@@ -3,12 +3,20 @@
 
 
 Zwierze::Zwierze() {
-    znak = "\U0001F43E";
+    znak = "8";
     podwojnyRuch = false;
+    dobryWech = false;
 }
 
 void Zwierze::akcja() {
-    swiat->idz(*this, *pozycja.obok(1));
+	if(dobryWech)
+	{
+		
+	}
+	else
+	{
+        swiat->idz(*this, *pozycja.obok(1));
+	}
     if (podwojnyRuch) {
         podwojnyRuch = false;
         akcja();
@@ -26,8 +34,6 @@ void Zwierze::kolizja(Zwierze& wchodzacy) {
     }
     else {
         auto komunikat = std::vector<std::string>();
-
-
 
         if (wchodzacy.jakaSila() >= this->jakaSila()) {
             komunikat.push_back(wchodzacy.znak);

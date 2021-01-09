@@ -1,7 +1,7 @@
 #include "Mlecz.h"
 
 Mlecz::Mlecz() {
-    znak = "\U0001F331";
+    znak = "I";
 }
 
 Organizm* Mlecz::dziecko() {

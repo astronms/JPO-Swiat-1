@@ -49,6 +49,15 @@
     <ClCompile Include="Leniwiec.cpp">
       <Filter>Source Files\Organizmy\Zwierzeta</Filter>
     </ClCompile>
+    <ClCompile Include="Wilk.cpp">
+      <Filter>Source Files\Organizmy\Zwierzeta</Filter>
+    </ClCompile>
+    <ClCompile Include="owca.cpp">
+      <Filter>Source Files\Organizmy\Zwierzeta</Filter>
+    </ClCompile>
+    <ClCompile Include="ZnakKolor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ekran.h">
@@ -80,6 +89,15 @@
     </ClInclude>
     <ClInclude Include="Leniwiec.h">
       <Filter>Source Files\Organizmy\Zwierzeta</Filter>
+    </ClInclude>
+    <ClInclude Include="Wilk.h">
+      <Filter>Source Files\Organizmy\Zwierzeta</Filter>
+    </ClInclude>
+    <ClInclude Include="owca.h">
+      <Filter>Source Files\Organizmy\Zwierzeta</Filter>
+    </ClInclude>
+    <ClInclude Include="ZnakKolor.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

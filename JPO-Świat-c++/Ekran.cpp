@@ -1,17 +1,10 @@
-﻿//
-// Created by johnny on 23/11/2020.
-//
-
-#include "Ekran.h"
-#include <stdio.h>
-
-#include <utility>
+﻿#include "Ekran.h"
 #include "iostream"
 
 using std::string;
 
 Ekran::Ekran() {
-    tura = 0;
+	tura = 0;
     templatka = wygenerujTemplatka();
     for (auto& rzad : plansza) {
         for (auto& kolumna : rzad) {
@@ -29,17 +22,17 @@ void Ekran::wstawZnak(std::string znak, Pozycja pozycja) {
 
 void Ekran::wyswietl() {
     auto plansza = wstawKomunikaty(wstawTure(wstawZnakiGracza(templatka)));
-    system("clear");
+    system("cls");
     wyswietlBuffer(plansza);
 }
 
-std::vector<std::vector<KolorowyZnak>> Ekran::wygenerujTemplatka() {
+std::vector<std::vector<ZnakKolor>> Ekran::wygenerujTemplatka() {
     std::vector<std::string> asciiPlansza;
 
     asciiPlansza.emplace_back("                                                                   \n");
-    asciiPlansza.emplace_back(" 1xxxxxxxxxxxxxxxxxx3 ╔══════════════════════════════════════════╗ \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx ║          Andrzej Bisewski 182619         ║ \n");
-    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx ╚══════════════════════════════════════════╝ \n");
+    asciiPlansza.emplace_back(" 1xxxxxxxxxxxxxxxxxx3      autor:      Maciej Stepien              \n");
+    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx      nr indeksu: 148339                      \n");
+    asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
     asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx  Tura:                                       \n");
     asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx                                              \n");
     asciiPlansza.emplace_back(" xxxxxxxxxxxxxxxxxxxx  Komunikaty:                                 \n");
@@ -61,12 +54,12 @@ std::vector<std::vector<KolorowyZnak>> Ekran::wygenerujTemplatka() {
     asciiPlansza.emplace_back(" \U0001F344 \u2190 koka     \U0001F331 \u2190 mlecz \U0001F33E \u2190 trawa\n");
     asciiPlansza.emplace_back(" \U0001F9A5 \u2190 leniwiec \U0001F411 \u2190 owca  \U0001F415 \u2190 wilk  \U0001F438 \u2190 żaba \U0001F40D \u2190 żmija \n");
 
-    std::vector<std::vector<KolorowyZnak>> kolorowaPlansza;
+    std::vector<std::vector<ZnakKolor>> kolorowaPlansza;
 
     for (std::string rzad : asciiPlansza) {
-        std::vector<KolorowyZnak> kolorowaLinia;
+        std::vector<ZnakKolor> kolorowaLinia;
         for (char kolumna : rzad) {
-            kolorowaLinia.emplace_back(KolorowyZnak(std::string(1, kolumna)));
+            kolorowaLinia.emplace_back(ZnakKolor(std::string(1, kolumna)));
         }
         kolorowaPlansza.emplace_back(kolorowaLinia);
     }
@@ -86,7 +79,7 @@ std::vector<std::vector<KolorowyZnak>> Ekran::wygenerujTemplatka() {
     return kolorowaPlansza;
 }
 
-std::vector<std::vector<KolorowyZnak>> Ekran::wstawZnakiGracza(std::vector<std::vector<KolorowyZnak>> kolorowaPlansza) {
+std::vector<std::vector<ZnakKolor>> Ekran::wstawZnakiGracza(std::vector<std::vector<ZnakKolor>> kolorowaPlansza) {
     const unsigned int RZAD_MAPY = 1;
     const unsigned int KOLUMNA_MAPY = 1;
     for (int rzad = 0; rzad < 20; rzad++) {
@@ -98,7 +91,7 @@ std::vector<std::vector<KolorowyZnak>> Ekran::wstawZnakiGracza(std::vector<std::
     return kolorowaPlansza;
 }
 
-std::vector<std::vector<KolorowyZnak>> Ekran::wstawTure(std::vector<std::vector<KolorowyZnak>> kolorowaPlansza) {
+std::vector<std::vector<ZnakKolor>> Ekran::wstawTure(std::vector<std::vector<ZnakKolor>> kolorowaPlansza) {
     const unsigned int RZAD_TURY = 4;
     const unsigned int KOLUMNA_TURY = 29;
 
@@ -111,7 +104,7 @@ std::vector<std::vector<KolorowyZnak>> Ekran::wstawTure(std::vector<std::vector<
     return kolorowaPlansza;
 }
 
-std::vector<std::vector<KolorowyZnak>> Ekran::wstawKomunikaty(std::vector<std::vector<KolorowyZnak>> kolorowaPlansza) {
+std::vector<std::vector<ZnakKolor>> Ekran::wstawKomunikaty(std::vector<std::vector<ZnakKolor>> kolorowaPlansza) {
 
     const unsigned int RZAD_MAPY = 8;
     const unsigned int KOLUMNA_MAPY = 29;
@@ -152,7 +145,7 @@ std::vector<std::vector<KolorowyZnak>> Ekran::wstawKomunikaty(std::vector<std::v
     return kolorowaPlansza;
 }
 
-void Ekran::wyswietlBuffer(const std::vector<std::vector<KolorowyZnak>>& linie) {
+void Ekran::wyswietlBuffer(const std::vector<std::vector<ZnakKolor>>& linie) {
     for (const auto& linia : linie) {
         for (auto znak : linia) {
             std::cout << znak.toString();

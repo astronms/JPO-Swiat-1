@@ -4,6 +4,7 @@
 class Zwierze : public Organizm {
 protected:
     bool podwojnyRuch;
+    bool dobryWech;
 public:
     Zwierze();
 
