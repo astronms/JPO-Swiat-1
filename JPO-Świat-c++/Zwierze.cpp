@@ -5,6 +5,7 @@
 Zwierze::Zwierze() {
     znak = "8";
     podwojnyRuch = false;
+    dobryWech = false;
    
 }
 
@@ -14,6 +15,10 @@ void Zwierze::akcja() {
         podwojnyRuch = false;
         akcja();
     }
+	if(dobryWech)
+	{
+        dobryWech = false;
+	}
 }
 
 

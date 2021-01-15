@@ -81,9 +81,6 @@
     <ClInclude Include="Zwierze.h">
       <Filter>Source Files\Organizmy</Filter>
     </ClInclude>
-    <ClInclude Include="Trawa.h">
-      <Filter>Source Files\Organizmy\Rosliny</Filter>
-    </ClInclude>
     <ClInclude Include="Leniwiec.h">
       <Filter>Source Files\Organizmy\Zwierzeta</Filter>
     </ClInclude>
@@ -104,6 +101,9 @@
     </ClInclude>
     <ClInclude Include="Zaba.h">
       <Filter>Source Files\Organizmy\Zwierzeta</Filter>
+    </ClInclude>
+    <ClInclude Include="Trawa.h">
+      <Filter>Source Files\Organizmy\Rosliny</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
